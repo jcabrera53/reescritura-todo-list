@@ -25,10 +25,16 @@ const Home = () => {
 	}
 
 	const handleKey = (event) =>{
-		if(event.key == 'Escape'){
+		if(event.key == 'Enter'){
 			setDestinyList( [ ...destinyList, texto ] )
 			setTexto('')
 		}
+	}
+	const mouseClic = (event) =>{
+		(event.onClick == 'true')
+			setDestinyList( [ ...destinyList, texto ] )
+			setTexto('')
+		
 	}
 	
 
@@ -39,7 +45,7 @@ const Home = () => {
 		<span className="input-group-text" id="inputGroup-sizing-lg">Buscar</span>
 			<input type="text" className="form-control" value={texto} onChange={(event) => setTexto(event.target.value)} onKeyDown={handleKey}/>
 		</div>
-		<button className="btn btn-info" >Agregar Card</button>
+		<button className="btn btn-info" onClick={mouseClic}>Agregar Card</button>
 			
 			<div className="d-flex flex-wrap">
 				{
