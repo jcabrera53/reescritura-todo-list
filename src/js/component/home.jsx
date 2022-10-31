@@ -41,8 +41,8 @@ const Home = () => {
 	//seccion de template
 	return (<>
 		<h1>Viaja ya mismo a: {texto}</h1>
-		<div className="input-group input-group-lg  my-3">
-		<span className="input-group-text" id="inputGroup-sizing-lg">Buscar</span>
+		<div className="input-group input-group-lg border border-dark my-3">
+		<span className="input-group-text" id="inputGroup-sizing-lg">Ciudad</span>
 			<input type="text" className="form-control" value={texto} onChange={(event) => setTexto(event.target.value)} onKeyDown={handleKey}/>
 		</div>
 		<button className="btn btn-info" onClick={mouseClic}>Agregar Card</button>
