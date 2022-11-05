@@ -1,20 +1,20 @@
 //primera paso
-import React from 'react'
+import React,{useState} from 'react'
+
+
 
 //segundo paso, darle nombre al componente
-const Card = (props) => {
+const Tarea = (props) => {
     //parte logica
-
+	const [mostrarComponente, setMostrarComponente] = useState(true);
     //parte template
     //retornar el  html
     return (<>
-        <div className="text-center col-3">
-			<div className="card">
-			<img className="card-img-top" src="https://picsum.photos/200" alt="Card image cap"/>
-				<div className="card-body">
-					<h5 className="card-title">{ props && props.title }</h5>
-					<p className="card-text">{props && props.description}</p>
-					<button className={`btn btn-${props.color ? props.color : 'info' }`} >Go somewhere</button>
+        <div className="text-center col-12">
+			<div className={mostrarComponente ? "show-element" : "d-none"}>
+				<div className="card-body d-flex justify-content-between">
+					<h5 className="card-title text-start">{ props && props.title }</h5>
+					<button className="bg-white border-0" onClick={() => setMostrarComponente(!mostrarComponente)}>X</button>
 				</div>
 			</div>
 		</div>
@@ -22,4 +22,4 @@ const Card = (props) => {
 }
 
 //ultimo paso
-export default Card;
+export default Tarea;
